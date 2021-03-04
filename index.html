@@ -24,20 +24,11 @@
 	        // }, 1000);
          	// location.href = url;
 
-             window.location.href = "coffeebeanapp://";
-             $.ajax({
-                 type: 'get'
-                 , url: 'coffeebeanapp://'
-                 , success: function(data) {
-                     console.log('aaa');
-                 }
-                 , error: function(e) {
-                     console.log('bbb');
-                    setTimeout(function() {
-                        location.href="https://itunes.apple.com/app/id1482718354";
-	                }, 1000);
-                 }
-             });
+            window.location.href = "coffeebeanapp://";
+
+            let url = new XMLHttpRequest();
+            url.open('get', 'coffeebeanapp://', true);
+            console.log(url.status);
         } else {
             console.log("pc");
         }
