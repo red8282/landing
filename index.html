@@ -13,7 +13,7 @@
     $(document).ready(function() {
         run();
     });
-    function run(){
+    function run() {
         // is IOS or is AOS
         if(isAndroid()) {
             location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
@@ -31,6 +31,7 @@
                      console.log('aaa');
                  }
                  , error: function(e) {
+                     console.log('bbb');
                     setTimeout(function() {
                         location.href="https://itunes.apple.com/app/id1482718354";
 	                }, 1000);
