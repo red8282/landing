@@ -12,21 +12,29 @@
 <script>
     $(document).ready(function() {
         run();
-
-        window.addEventListener('hashchange', function() {
-            console.log('listen');
-        });
     });
     function run(){
         // is IOS or is AOS
         if(isAndroid()) {
             location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
         } else if(isIos()) {
-            var url = "coffeebeanapp://";
-            setTimeout(function() {
-                location.href="https://itunes.apple.com/app/id1482718354";
-	        }, 1000);
-         	location.href = url;
+            // var url = "coffeebeanapp://";
+            // setTimeout(function() {
+            //     location.href="https://itunes.apple.com/app/id1482718354";
+	        // }, 1000);
+         	// location.href = url;
+
+             $.ajax({
+                 type: 'get'
+                 , url: 'coffeebeanapp://'
+                 , success: function(data) {
+                 }
+                 , error: function(e) {
+                    setTimeout(function() {
+                        location.href="https://itunes.apple.com/app/id1482718354";
+	                }, 1000);
+                 }
+             });
         } else {
             console.log("pc");
         }
