@@ -11,23 +11,78 @@
 </head>
 <script>
     $(document).ready(function() {
-        console.log('aaa');
+        run();
     });
+    function run(){
+        // is IOS or is AOS
+        if(isAndroid()) {
+            location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
+        } else if(isIos()) {
+            var url = "coffeebeanapp://";
+            setTimeout(function() {
+                location.replace="https://itunes.apple.com/app/id1482718354";
+	        }, 1000);
+         	location.href = url;
+        } else{
+            console.log("pc");
+        }
+    }
+
+    /**
+    * 디바이스 타입 검사
+    * @return {string} Os String
+    */
+    function deviceType() {
+	    let device= "";
+	    let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+	    if(userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+	        device= 'ios';
+	    } else if( userAgent.match(/Android/i)) {
+	        device= 'android';
+        } else {
+		    device= 'unknown';
+	    }   
+	    return device;
+    }
+
+    /**
+    * 접속 OS Android 여부 검사
+    * @return {boolean}
+    */
+    function isAndroid() {
+        let type = deviceType();
+	    if(type != null && type === 'android') {
+		    return true;
+	    }
+	    return false;
+    }
+
+    /**
+    * 접속 OS iOS 여부 검사
+    * @return {boolean}
+    */
+    function isIos() {
+	    let type = deviceType();
+	    if(type != null && type === 'ios') {
+		    return true;
+	    }
+	    return false;
+    }
 </script>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="resource/img/coffeebean_logo.png" alt="" />
+        <div class="logo" >
+            <img src="resource/img/coffeebean_logo.png" alt="" onclick="run()" />
         </div>
         <div class="name">
             <p>커피빈</p>
         </div>
         <div class="store_link">
             <span class="ios">
-                <img src="resource/img/ios_btn.png" alt="" />
+                <img src="resource/img/ios_btn.png" alt="" onclick="run()" />
             </span>
             <span class="android">
-                <img src="resource/img/android_btn.png" alt="" />
+                <img src="resource/img/android_btn.png" alt="" onclick="run()" />
             </span>
         </div>
     </div>
