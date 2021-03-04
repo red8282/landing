@@ -25,7 +25,7 @@
          	// location.href = url;
 
             var fallbackLink = '';
-            document.getElementById('loader').src = 'coffeebeanapp://'+window.location.search+window.location.hash;
+            document.getElementById('loader').src = 'coffeebeanapp://';
             fallbackLink = 'itms-apps://itunes.apple.com/app/id1482718354';
             window.setTimeout(function (){ window.location.replace(fallbackLink); }, 1);
         } else {
