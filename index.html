@@ -24,9 +24,12 @@
 	        // }, 1000);
          	// location.href = url;
 
-            let url = new XMLHttpRequest();
-            url.open('get', 'http://www.naver.com', true);
-            console.log(url.status);
+            window.location.href = "coffeebean://"
+
+            window.addEventListener('hashchange', function() {
+                console.log("hash change");
+            }, false);
+
         } else {
             console.log("pc");
         }
