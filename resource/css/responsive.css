@@ -1,0 +1,36 @@
+@media (max-device-width:480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container .logo img{
+        width: 100px;
+        margin-top: 400px;
+    }
+
+    .container .name {
+        margin: 50px 0;
+    }
+
+    .container .name p {
+        font-size: 16px;
+    }
+    
+    .container .store_link {
+        margin-top: 100px;
+    }
+
+    .container .store_link .ios {
+        margin-right: 10px;
+    }
+
+    .container .store_link .ios img {
+        width: 150px;
+        height: 40px;
+    }
+
+    .container .store_link .android img {
+        width: 150px;
+        height: 40px;
+    }
+}
