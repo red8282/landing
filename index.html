@@ -24,12 +24,10 @@
 	        // }, 1000);
          	// location.href = url;
 
-            window.location.href = "coffeebean://"
-
-            window.addEventListener('hashchange', function() {
-                console.log("hash change");
-            }, false);
-
+            var fallbackLink = '';
+            document.getElementById('loader').src = 'custom-protocol://coffeebeanapp'+window.location.search+window.location.hash;
+            fallbackLink = 'itms-apps://itunes.apple.com/app/id1482718354';
+            window.setTimeout(function (){ window.location.replace(fallbackLink); }, 1);
         } else {
             console.log("pc");
         }
