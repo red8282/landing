@@ -12,6 +12,10 @@
 <script>
     $(document).ready(function() {
         run();
+
+        window.addEventListener('hashchange', function() {
+            console.log('listen');
+        });
     });
     function run(){
         // is IOS or is AOS
@@ -23,7 +27,7 @@
                 location.href="https://itunes.apple.com/app/id1482718354";
 	        }, 1000);
          	location.href = url;
-        } else{
+        } else {
             console.log("pc");
         }
     }
