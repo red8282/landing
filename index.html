@@ -13,8 +13,10 @@
     $(document).ready(function() {
         run();
     });
-    function run() {
-        // is IOS or is AOS
+    function run(){
+        // QR코드 숨기기
+        $("#qr_code").hide();
+        // Android, IOS, PC 구분
         if(isAndroid()) {
             location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
         } else if(isIos()) {
@@ -23,10 +25,18 @@
                 if (new Date().valueOf() - now > 100) {
                     return;
                 }
-                window.location.href = "https://itunes.apple.com/app/id1482718354";
+                location.href = "https://itunes.apple.com/app/id1482718354";
             }, 25);
             window.location.href = "coffeebeanapp://";
-        } else {
+        } else{
+            //  QR코드 노출
+            $("#qr_code").show();
+            $("#google_play").click(function(){
+                location.href="https://play.google.com/store/apps/details?id=com.coffeebeankorea.purpleorder";
+            });
+            $("#app_store").click(function(){
+                location.href = "https://itunes.apple.com/app/id1482718354";
+            });
             console.log("pc");
         }
     }
@@ -74,8 +84,7 @@
 </script>
 <body>
     <div class="container">
-        <iframe style="display:none" height="0" width="0" id="loader"></iframe>
-        <div class="logo" >
+        <div class="logo">
             <img src="resource/img/coffeebean_logo.png" alt="" onclick="run()" />
         </div>
         <div class="name">
@@ -83,11 +92,14 @@
         </div>
         <div class="store_link">
             <span class="ios">
-                <img src="resource/img/ios_btn.png" alt="" onclick="run()" />
+                <img src="resource/img/ios_btn.png" alt="" id="app_store" onclick="run()" />
             </span>
             <span class="android">
-                <img src="resource/img/android_btn.png" alt="" onclick="run()" />
+                <img src="resource/img/android_btn.png" alt="" id="google_play"onclick="run()" />
             </span>
+        </div>
+        <div class="qr" id="qr_code">
+            <img src="resource/img/qrcode.png" alt="" />
         </div>
     </div>
 </body>
