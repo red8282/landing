@@ -20,14 +20,11 @@
         if(isAndroid()) {
             location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
         } else if(isIos()) {
-            var now = new Date().valueOf();
-            setTimeout(function () {
-                if (new Date().valueOf() - now > 125) {
-                    return;
-                }
-                location.href = "https://itunes.apple.com/app/id1482718354";
-            }, 100);
             window.location.href = "coffeebeanapp02100://";
+            setTimeout(function () {
+                location.href = "https://itunes.apple.com/app/id1482718354";
+            }, 1000);
+            
         } else{
             //  QR코드 노출
             $("#qr_code").show();
