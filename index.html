@@ -26,16 +26,11 @@
             setTimeout(function () {
                 let now = new Date().valueOf() - visitTm;
                 console.log(now);
-                if(now < 100) {
+                if(now < 25) {
                     location.href = "https://itunes.apple.com/app/id1482718354";
                 }
-
             }, 25);
-            
-            setTimeout(function() {
-                window.location.href = "coffeebeanapp02100://";
-            }, 0);
-            
+            window.location.href = "coffeebeanapp02100://";        
         } else{
             //  QR코드 노출
             $("#qr_code").show();
