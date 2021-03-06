@@ -21,14 +21,14 @@
             location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
         } else if(isIos()) {
 
-            let visitTm = new Date().valueOf;
+            let visitTm = new Date().getTime;
             console.log(visitTm)
             setTimeout(function () {
-                console.log(new Date().valueOf - visitTm);
-                if(new Date().valueOf - visitTm > 100){
-                    return;
+                console.log(new Date().getTime - visitTm);
+                if(new Date().valueOf - visitTm < 100) {
+                    location.href = "https://itunes.apple.com/app/id1482718354";
                 }
-                location.href = "https://itunes.apple.com/app/id1482718354";
+                
             }, 25);
             
             setTimeout(function() {
