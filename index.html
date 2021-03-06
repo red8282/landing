@@ -22,12 +22,14 @@
         } else if(isIos()) {
 
             let visitTm = new Date().valueOf;
+            console.log(visitTm)
             setTimeout(function () {
-                if(new Date().valueOf - visitTm > 1500){
+                console.log(new Date().valueOf - visitTm);
+                if(new Date().valueOf - visitTm > 100){
                     return;
                 }
                 location.href = "https://itunes.apple.com/app/id1482718354";
-            }, 1500);
+            }, 25);
             
             setTimeout(function() {
                 window.location.href = "coffeebeanapp02100://";
