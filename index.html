@@ -22,7 +22,7 @@
         } else if(isIos()) {
 
             let visitTm = new Date().valueOf();
-            console.log(visitTm)
+            console.log(visitTm);
             setTimeout(function () {
                 let now = new Date().valueOf() - visitTm;
                 console.log(now);
@@ -30,7 +30,9 @@
                     location.href = "https://itunes.apple.com/app/id1482718354";
                 }
             }, 500);
-            window.location.href = "coffeebeanapp02100://";        
+            setTimeout(() => {
+                window.location.href = "coffeebeanapp02100://";
+            }, 100);
         } else{
             //  QR코드 노출
             $("#qr_code").show();
