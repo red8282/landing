@@ -23,12 +23,15 @@
 
             let visitTm = new Date().valueOf;
             setTimeout(function () {
-                if(new Date().valueOf - visitTm > 1000){
+                if(new Date().valueOf - visitTm > 1500){
                     return;
                 }
                 location.href = "https://itunes.apple.com/app/id1482718354";
-            }, 500);
-            window.location.href = "coffeebeanapp02100://";
+            }, 1500);
+            
+            setTimeout(function() {
+                window.location.href = "coffeebeanapp02100://";
+            }, 0);
             
         } else{
             //  QR코드 노출
